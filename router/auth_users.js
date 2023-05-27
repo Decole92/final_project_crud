@@ -72,28 +72,7 @@ regd_users.delete("/auth/review/:isbn", (req, res) => {
   let findBook = books[isbn];
 });
 
-const getBooks = async () => {
-  const res = await axios.get("http://localhost:5000");
-  const data = await res.json();
-  return data;
-};
-const getDataByIbsn = async () => {
-  const res = await axios.get(`http://localhost:5000/isbn/${isbn}`);
-  const data = await res.json();
-  return data;
-};
 
-const getDataByAuthor = async () => {
-  const res = await axios.get(`http://localhost:5000/author/${author}`);
-  const data = await res.json();
-  return data;
-};
-const getDataByTitle = async () => {
-  const res = await axios.get(`http://localhost:5000/title/${title}`);
-  const data = await res.json();
-  return data
-
-}
 module.exports.authenticated = regd_users;
 module.exports.isValid = isValid;
 module.exports.users = users;

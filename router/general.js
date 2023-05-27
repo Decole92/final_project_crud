@@ -93,4 +93,26 @@ public_users.get("/review/:isbn", function (req, res) {
   return res.status(200).json({ reviews });
 });
 
+const getBooks = async () => {
+  const res = await axios.get("http://localhost:5000");
+  const data = await res.json();
+  return data;
+};
+const getDataByIbsn = async () => {
+  const res = await axios.get(`http://localhost:5000/isbn/${isbn}`);
+  const data = await res.json();
+  return data;
+};
+
+const getDataByAuthor = async () => {
+  const res = await axios.get(`http://localhost:5000/author/${author}`);
+  const data = await res.json();
+  return data;
+};
+const getDataByTitle = async () => {
+  const res = await axios.get(`http://localhost:5000/title/${title}`);
+  const data = await res.json();
+  return data;
+};
+
 module.exports.general = public_users;
